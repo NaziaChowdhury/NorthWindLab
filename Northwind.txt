@@ -1,0 +1,46 @@
+1. SELECT * FROM customers;
+
+2.SELECT DISTINCT city FROM customers;
+
+3.SELECT * FROM customers WHERE  last_name LIKE ‘a%’;
+
+4.SELECT * FROM orders LIMIT 2;
+
+5.SELECT * FROM customers WHERE city ='New York’;
+
+6.SELECT * FROM orders WHERE ship_country_region is not NULL;
+
+7.SELECT * FROM customers ORDER BY state_province, city;
+
+8.INSERT INTO customers (`id`, `company`, `last_name`, `first_name`, `email_address`, `job_title`, `business_phone`, `home_phone`, `mobile_phone`, `fax_number`, `address`, `city`, `state_province`, `zip_postal_code`, `country_region`, `web_page`, `notes`, `attachments`) VALUES (89, 'Company MN', 'Rahman', 'Minhazur', NULL, 'Software Engineer', '(313)666-1138', NULL, NULL, '(313)567-890', '346 2nd Street', 'Detroit', 'MI', '48204', 'USA', NULL, NULL, '');
+
+9.UPDATE orders SET ship_country_region='Northeast' WHERE ship_state_province='MA' OR ship_state_province='NY’;
+
+10.SELECT * FROM customers WHERE company = ‘A’;
+
+11.SELECT AVG(shipping_fee)  FROM orders;
+ SELECT MAX(shipping_fee) FROM orders;
+ SELECT MIN(shipping_fee) FROM orders;
+ 
+12.SELECT AVG(shipping_fee) FROM orders ORDER BY customer_id ;
+SELECT MAX(shipping_fee) FROM orders ORDER BY customer_id;
+SELECT MIN(shipping_fee) FROM orders ORDER BY customer_id;
+
+13.SELECT * FROM orders WHERE customer_id = '29’;
+
+14.SELECT * FROM customers INNER JOIN orders ON customers.zip_postal_code = orders.ship_zip_postal_code;
+SELECT * FROM customers LEFT JOIN orders ON customers.city = orders.ship_city;
+SELECT * FROM customers RIGHT JOIN orders ON customers.city = orders.ship_city;
+ 
+15.SELECT * FROM customers INNER JOIN orders ON customers.zip_postal_code = orders.ship_zip_postal_code WHERE customers.city = 'Chicago’;
+
+16.SELECT orders.ship_name, order_details.product_id, orders.id FROM order_details LEFT JOIN orders ON order_details.id = orders.id WHERE product_id='1';
+
+17.SELECT * FROM customers WHERE job_title LIKE 'Owner'; 
+
+18. SELECT * FROM customers WHERE job_title!='Marketing sales'; 
+
+
+
+
+Note: Some of the queries are different from the question queries, because of the customers table and orders are not similar to questions!!!
